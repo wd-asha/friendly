@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Friendly</title>
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="contents">
+
+<div class="header-fix-shop">
+    <div class="header" id="header">
+        <div class="header-logo">
+            <a href="index.html" class="header-logo-link">Friendly</a>
+        </div>
+        <div class="header-menu">
+            <div class="nav-item">
+               <a href="#" class="nav-item-link" id="itemLink1">Куда доставить?</a>
+            </div>
+        </div>
+        <div class="header-link">
+            <a href="#" class="burger">
+                <img src="images/user.svg">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="content-box">
+    <div class="header-img">
+        <img src="images/header-shop-min.jpg" alt="">
+    </div>
+    <div class="content-left">
+        <div class="content-left-menu">
+
+            <div class="content-left-search">
+                <div class="search-icon">
+                    <img src="images/loupe.svg" alt="">
+                </div>
+                <input type="text">
+                <div class="search-close">X</div>
+            </div>
+
+            <div class="content-left-icon">
+                <img src="images/loupe.svg" alt="">
+            </div>
+            <div class="content-left-items">
+                <div class="content-left-item">
+                    <a href="shop.html" class="active">Назад к меню</a>
+                </div>
+                <div class="content-left-item">
+
+                </div>
+                <div class="content-left-item">
+
+                </div>
+                <div class="content-left-item">
+
+                </div>
+            </div>
+            <div class="content-left-favorit">
+                <img src="images/heart.svg" alt="">
+            </div>
+
+        </div>
+
+        <h3 id="autor">Избранное</h3>
+        <div class="menu">
+
+            <div class="menu-item">
+                <div class="menu-item-desc">
+                    <div>
+                        <p class="item-title">Индийский</p>
+                        <p class="item-text">Свежий картофель фри, куриный шашлык тандури, сливочный куриный соус, майонез карри, орехи кешью</p>
+                    </div>
+                    <p class="item-price">559 ₽</p>
+                </div>
+                <div class="menu-item-img">
+                    <img src="images/item04-min.png" alt="">
+                </div>
+                <div class="cart-add">
+                    <img src="images/add.svg" alt="">
+                </div>
+                <div class="favorit-add">
+                    <img src="images/heart-minus.svg" alt="">
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-desc">
+                    <div>
+                        <p class="item-title">Восточный</p>
+                        <p class="item-text">Свежий картофель фри, куриный шашлык, салат мехуйя, домашний соус чили</p>
+                    </div>
+                    <p class="item-price">559 ₽</p>
+                </div>
+                <div class="menu-item-img">
+                    <img src="images/item05-min.png" alt="">
+                </div>
+                <div class="cart-add">
+                    <img src="images/add.svg" alt="">
+                </div>
+                <div class="favorit-add">
+                    <img src="images/heart-minus.svg" alt="">
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-desc">
+                    <div>
+                        <p class="item-title">Мексиканский</p>
+                        <p class="item-text">Свежий картофель фри, перец чили кон карне, гуакамоле, чеддер и халапеньо</p>
+                    </div>
+                    <p class="item-price">559 ₽</p>
+                </div>
+                <div class="menu-item-img">
+                    <img src="images/item06-min.png" alt="">
+                </div>
+                <div class="cart-add">
+                    <img src="images/add.svg" alt="">
+                </div>
+                <div class="favorit-add">
+                    <img src="images/heart-minus.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="content-right">
+        <p class="title">
+            Корзина
+        </p>
+        <div class="cart">
+        <div class="cart-icon">
+            <img src="images/basket.svg" alt="">
+        </div>
+        <div class="cart-info">
+            <p>Добавте вкусную еду</p>
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="info-section-bg">
+<div class="info-section">
+    <div class="info-item">
+        <a href="#">Правовая информация</a>
+    </div>
+    <div class="info-item">
+        <a href="#">Политика конфиденциальности</a>
+    </div>
+    <div class="info-item">
+        <a href="#">О cookie</a>
+    </div>
+    <div class="info-item">
+        <a href="http://wd-asha.ru">&copy;wd-asha</a>
+    </div>
+</div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script>
+    $(function(){
+
+        let headerShop = $('.header-fix-shop');
+        let headerImage = $('.header-img');
+        let contentLeftItems = $('.content-left-menu');
+        let contentRight = $('.content-right');
+
+        headerShopHeight = headerShop.height();
+        headerImageHeight = headerImage.height();
+        startFix = headerShopHeight + headerImageHeight;
+
+        window.onscroll = function showHeader() {
+            if(window.pageYOffset > startFix){
+                contentLeftItems.css('position', 'sticky');
+                contentLeftItems.css('top', 0);
+                contentRight.css('position', 'sticky');
+                contentRight.css('top', 0);
+            }
+        };
+
+    let autorA = $('a[href="#autor"]');
+    let autor = $('#autor');
+    let saladA = $('a[href="#salad"]');
+    let salad = $('#salad');
+    let souseA = $('a[href="#souse"]');
+    let souse = $('#souse');
+    let colaA = $('a[href="#cola"]');
+    let cola = $('#cola');
+
+    $(window).scroll(function() {
+        okAutor = autor.offset().top - autorA.offset().top;
+        okSalad = salad.offset().top - saladA.offset().top;
+        okSouse = souse.offset().top - souseA.offset().top;
+        okCola = cola.offset().top - colaA.offset().top;
+        if (okAutor <= 0) {
+            contentLeftItem.each(function () {
+                $(this).removeClass('active')
+            });
+            autorA.addClass('active');
+        }
+        if (okSalad <= 0) {
+            contentLeftItem.each(function () {
+                $(this).removeClass('active')
+            });
+            saladA.addClass('active');
+        }
+        if (okSouse <= 0) {
+            contentLeftItem.each(function () {
+                $(this).removeClass('active')
+            });
+            souseA.addClass('active');
+        }
+        if (okCola <= 0) {
+            contentLeftItem.each(function () {
+                $(this).removeClass('active')
+            });
+            colaA.addClass('active');
+        }
+    });
+
+        $('a[href^="#"]').on('click', function() {
+            let href = $(this).attr('href');
+
+            $('html, body').animate({
+                scrollTop: $(href).offset().top
+            }, {
+                duration: 1000,   // по умолчанию «400»
+                easing: "linear" // по умолчанию «swing»
+            });
+            return false;
+        });
+
+        let contentLeftIcon = $('.content-left-icon');
+        let contentLeftSearch = $('.content-left-search');
+        let searchClose = $('.search-close');
+
+        contentLeftIcon.on('click', function () {
+            contentLeftSearch.css("display", "flex");
+        });
+        searchClose.on('click', function () {
+            contentLeftSearch.css("display", "none");
+        });
+
+    });
+</script>
+
+</body>
+</html>
